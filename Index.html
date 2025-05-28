@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Sustainability Timeline</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #e0f7fa;
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(120deg, #0f2027 60%, #00c6fb 100%);
+            padding: 3rem 1rem 2.5rem 1rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,198,251,0.12);
+        }
+        .intel-logo {
+            width: 100px;
+            margin-bottom: 1.2rem;
+            filter: drop-shadow(0 0 8px #00eaff);
+        }
+        .hero h1 {
+            font-size: 2.7rem;
+            margin: 0 0 0.7rem 0;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #00eaff;
+            text-shadow: 0 0 12px #00eaff88, 0 2px 8px #0f2027;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin: 0 auto;
+            max-width: 540px;
+            color: #e0f7fa;
+            text-shadow: 0 1px 8px #003c71;
+        }
+        .timeline-container {
+            margin: 3rem auto;
+            max-width: 1200px;
+            padding: 0 1rem;
+            overflow-x: auto;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+            justify-content: flex-start;
+            align-items: stretch;
+            min-width: 800px;
+        }
+        .milestone {
+            background: rgba(20, 40, 60, 0.85);
+            color: #e0f7fa;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,234,255,0.13), 0 1.5px 0 #00eaff inset;
+            min-width: 280px;
+            max-width: 280px;
+            flex: 0 0 280px;
+            padding: 1.5rem 1.1rem 1.2rem 1.1rem;
+            position: relative;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            border: 1.5px solid #00eaff44;
+        }
+        .milestone:hover, .milestone:focus-within {
+            box-shadow: 0 12px 48px #00eaff55, 0 0 0 2px #00eaff;
+            transform: translateY(-8px) scale(1.035);
+        }
+        .milestone img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            background: #e3f2fd;
+            box-shadow: 0 0 16px #00eaff33;
+        }
+        .milestone-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            color: #00eaff;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00eaff55;
+        }
+        .milestone-year {
+            font-size: 1.02rem;
+            color: #00c6fb;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .milestone-summary {
+            font-size: 1.01rem;
+            margin-bottom: 0.2rem;
+            color: #e0f7fa;
+        }
+        .milestone-details {
+            background: rgba(0, 234, 255, 0.09);
+            color: #e0f7fa;
+            font-size: 0.97rem;
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            margin-top: 0.8rem;
+            opacity: 0;
+            max-height: 0;
+            transition: opacity 0.3s, max-height 0.3s;
+            pointer-events: none;
+            box-shadow: 0 0 12px #00eaff22;
+        }
+        .milestone:hover .milestone-details,
+        .milestone:focus-within .milestone-details {
+            opacity: 1;
+            max-height: 220px;
+            pointer-events: auto;
+        }
+        .timeline::-webkit-scrollbar {
+            height: 10px;
+            background: #003c71;
+        }
+        .timeline::-webkit-scrollbar-thumb {
+            background: #00eaff88;
+            border-radius: 6px;
+        }
+        /* Timeline vertical on small screens */
+        @media (max-width: 900px) {
+            .timeline {
+                flex-direction: column;
+                min-width: 0;
+                gap: 2rem;
+                align-items: center;
+            }
+            .timeline-container {
+                overflow-x: visible;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .milestone {
+                min-width: 90vw;
+                max-width: 98vw;
+                padding: 1.1rem 0.7rem 1rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="https://assets.brandfetch.io/ide6FQyJk_/id0v2QyJk_.svg" alt="Intel Logo" class="intel-logo">
+        <h1>Intel Sustainability Goals Timeline</h1>
+        <p>
+            Explore Intel’s journey toward a sustainable future. Scroll through our timeline to see how we’re innovating for the planet with bold goals and real progress.
+        </p>
+        <div style="margin:2.5rem auto 0 auto; max-width:650px; color:#b2ebf2; font-size:1.08rem; line-height:1.7;">
+            <strong>About Intel:</strong> Founded in 1968, Intel has been at the forefront of semiconductor innovation, powering the digital age with its microprocessors and technologies. From the first 4004 chip to today’s AI and edge computing, Intel’s legacy is built on relentless innovation, responsibility, and a vision for a smarter, more sustainable world.<br><br>
+            <strong>Looking Ahead:</strong> Intel is committed to advancing not only technology but also environmental and social progress. With ambitious sustainability goals, investments in green manufacturing, and leadership in responsible computing, Intel aims to enable a positive impact for generations to come.
+        </div>
+    </section>
+    <section class="timeline-container">
+        <div class="timeline">
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Intel Founded">
+                <div class="milestone-title">Intel Founded</div>
+                <div class="milestone-year">1968</div>
+                <div class="milestone-summary">Robert Noyce and Gordon Moore establish Intel in California.</div>
+                <div class="milestone-details">
+                    Intel’s founding marked the start of the modern semiconductor industry. The company’s name comes from “Integrated Electronics.”
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c5a?auto=format&fit=crop&w=400&q=80" alt="4004 Microprocessor">
+                <div class="milestone-title">First Microprocessor: 4004</div>
+                <div class="milestone-year">1971</div>
+                <div class="milestone-summary">Intel launches the world’s first commercial microprocessor.</div>
+                <div class="milestone-details">
+                    The 4004 was a 4-bit CPU that revolutionized computing, enabling the development of smaller, more powerful devices.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Pentium Processor">
+                <div class="milestone-title">Pentium Processor</div>
+                <div class="milestone-year">1993</div>
+                <div class="milestone-summary">The Pentium brand debuts, powering a new era of PCs.</div>
+                <div class="milestone-details">
+                    Pentium processors brought advanced performance and multimedia capabilities to mainstream computers worldwide.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Core i7 Launch">
+                <div class="milestone-title">Core i7 Launch</div>
+                <div class="milestone-year">2008</div>
+                <div class="milestone-summary">Intel introduces the Core i7, redefining high-performance computing.</div>
+                <div class="milestone-details">
+                    The Core i7 series set new standards for speed, efficiency, and multitasking in desktops and laptops.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Green Energy">
+                <div class="milestone-title">100% Green Power</div>
+                <div class="milestone-year">2022</div>
+                <div class="milestone-summary">Intel achieves 100% renewable electricity use in U.S., Europe, Israel, and Malaysia.</div>
+                <div class="milestone-details">
+                    By investing in solar, wind, and other renewables, Intel powers its major global operations with clean energy, reducing its carbon footprint and setting a standard for the tech industry.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Net Positive Water">
+                <div class="milestone-title">Net Positive Water</div>
+                <div class="milestone-year">2025 Goal</div>
+                <div class="milestone-summary">Return more freshwater to communities than Intel withdraws.</div>
+                <div class="milestone-details">
+                    Intel restores water through conservation and community projects, aiming to replenish 100% of its global water use and support local ecosystems.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Zero Waste to Landfill">
+                <div class="milestone-title">Zero Waste to Landfill</div>
+                <div class="milestone-year">2030 Goal</div>
+                <div class="milestone-summary">Achieve zero hazardous waste to landfill across all operations.</div>
+                <div class="milestone-details">
+                    Through recycling, reuse, and innovative waste management, Intel is committed to sending zero hazardous waste to landfills by 2030.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Net Zero GHG Emissions">
+                <div class="milestone-title">Net Zero Greenhouse Gas Emissions</div>
+                <div class="milestone-year">2040 Goal</div>
+                <div class="milestone-summary">Intel commits to net-zero greenhouse gas emissions for global operations.</div>
+                <div class="milestone-details">
+                    Intel is investing in energy efficiency, green buildings, and carbon offsets to reach net-zero emissions by 2040, leading the way for a climate-resilient future.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Circular Economy">
+                <div class="milestone-title">Circular Economy Leadership</div>
+                <div class="milestone-year">Ongoing</div>
+                <div class="milestone-summary">Designing products and processes for reuse, recycling, and minimal waste.</div>
+                <div class="milestone-details">
+                    Intel advances a circular economy by designing chips and packaging for longevity, recyclability, and minimal environmental impact.
+                </div>
+            </div>
+            <div class="milestone" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="AI & Future">
+                <div class="milestone-title">AI & Future Innovation</div>
+                <div class="milestone-year">2020s & Beyond</div>
+                <div class="milestone-summary">Intel leads in AI, edge computing, and sustainable technology.</div>
+                <div class="milestone-details">
+                    Intel is shaping the future with breakthroughs in artificial intelligence, quantum computing, and responsible manufacturing—enabling a smarter, greener, and more connected world.
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
